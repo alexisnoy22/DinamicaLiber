@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dinámica QR</title>
+</head>
+<body>
+    <h1>Introduce tu nombre</h1>
+    <input type="text" id="nombre" placeholder="Escribe tu nombre">
+    <button onclick="mostrarImagen()">Enviar</button>
+    <div id="resultado" style="margin-top:20px;"></div>
+    <script>
+        function mostrarImagen() {
+            const nombre = document.getElementById('nombre').value.toLowerCase().trim();
+            const resultado = document.getElementById('resultado');
+            let imagenURL;
+
+            switch (nombre) {
+                case 'alexis':
+                    imagenURL = 'https://ejemplo.com/imagen1.jpg'; // Cambia por la URL de la imagen de Alexis
+                    break;
+                case 'maria':
+                    imagenURL = 'https://ejemplo.com/imagen2.jpg'; // Cambia por la URL de María
+                    break;
+                default:
+                    imagenURL = 'https://ejemplo.com/imagen_defecto.jpg'; // Imagen por defecto
+            }
+
+            resultado.innerHTML = `<img src="${imagenURL}" alt="Imagen para ${nombre}" style="max-width:300px;">`;
+        }
+    </script>
+</body>
+</html>
